@@ -1,58 +1,95 @@
 
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشروع 10 مليون</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #0e1c2f;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-        p {
-            font-size: 1.1em;
-            margin-bottom: 40px;
-        }
-        a.button {
-            display: inline-block;
-            background-color: #1e90ff;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-        .contact-page {
-            padding-top: 50px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Million Dollar Idea | مشروع الـ 10 مليون</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+    .contact-btn {
+      background-color: #ffffff;
+      color: #2a5298;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      display: inline-block;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #ddd;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #fff;
+      color: #2a5298;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <div class="home-page">
-        <h1>فكرة لمشروع جاهز للإطلاق..</h1>
-        <h1>بينك وبين 10 ملايين دولار خطوة واحدة فقط</h1>
-        <h2>شراكة بنسبة 40% متاحة الآن للاستثمار</h2>
-        <p>في غضون 60 يومًا فقط، يمكنك تحقيق أكثر من 6 ملايين دولار كصافي ربح</p>
-        <a class="button" href="#contact">تواصل معنا</a>
-    </div>
+  <button class="toggle-btn" onclick="toggleLang()">عربي / English</button>
 
-    <div id="contact" class="contact-page">
-        <h1>تواصل معنا</h1>
-        <p>📧 projectsnawat@gmail.com</p>
-        <p>📞 +9647732336535</p>
-    </div>
+  <div id="en" class="section active">
+    <header>
+      <h1>Launch Your $10M Project</h1>
+      <p>In just 60 days, you could be $6M richer. A ready-to-launch idea is waiting for you.</p>
+      <a class="contact-btn" href="mailto:projectsnawat@gmail.com">Contact Us</a>
+    </header>
+    <footer>
+      &copy; 2025 Million Dollar Project | Email: projectsnawat@gmail.com | Phone: +9647732336535
+    </footer>
+  </div>
+
+  <div id="ar" class="section" dir="rtl" lang="ar">
+    <header>
+      <h1>فكرة مشروع جاهز للإطلاق</h1>
+      <p>60 يوم فقط... بينك وبين 10 ملايين دولار خطوة واحدة</p>
+      <a class="contact-btn" href="mailto:projectsnawat@gmail.com">تواصل معنا</a>
+    </header>
+    <footer>
+      &copy; 2025 مشروع 10 مليون | البريد: projectsnawat@gmail.com | الهاتف: +9647732336535
+    </footer>
+  </div>
+
+  <script>
+    function toggleLang() {
+      var en = document.getElementById('en');
+      var ar = document.getElementById('ar');
+      en.classList.toggle('active');
+      ar.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
