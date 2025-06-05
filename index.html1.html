@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Million Dollar Project</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1650&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    .overlay {
+      background-color: rgba(0,0,0,0.7);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 20px 60px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .highlight {
+      background: #fff;
+      color: #2a5298;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .btn {
+      background-color: #ffffff;
+      color: #2a5298;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1em;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .countdown {
+      font-size: 2em;
+      margin: 30px 0;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #ffffff;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 3;
+    }
+    footer {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-top: 50px;
+    }
+    .section { display: none; }
+    .section.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <button class="toggle-btn" onclick="toggleLang()">عربي / English</button>
+
+  <div id="en" class="section active content">
+    <h1>Launch Your $10M Project</h1>
+    <p>A fully-prepared business idea that can generate over $10 million in just 60 days.</p>
+    <div class="highlight">🚀 40% partnership available for investment</div>
+    <div class="countdown" id="countdown-en"></div>
+    <a href="mailto:projectsnawat@gmail.com" class="btn">Contact Us</a>
+    <footer>
+      &copy; 2025 Million Dollar Project | Email: projectsnawat@gmail.com | Phone: +9647732336535
+    </footer>
+  </div>
+
+  <div id="ar" class="section content" dir="rtl" lang="ar">
+    <h1>أطلق مشروع بقيمة 10 مليون دولار</h1>
+    <p>فكرة عمل جاهزة بالكامل يمكنها توليد أكثر من 10 مليون دولار في 60 يوماً فقط.</p>
+    <div class="highlight">🚀 شراكة بنسبة 40% متاحة الآن للاستثمار</div>
+    <div class="countdown" id="countdown-ar"></div>
+    <a href="mailto:projectsnawat@gmail.com" class="btn">اتصل بنا</a>
+    <footer>
+      &copy; 2025 مشروع المليون دولار | البريد الإلكتروني: projectsnawat@gmail.com | الهاتف: +9647732336535
+    </footer>
+  </div>
+
+  <script>
+    function toggleLang() {
+      document.getElementById("en").classList.toggle("active");
+      document.getElementById("ar").classList.toggle("active");
+    }
+
+    function startCountdown(id, days) {
+      var countDownDate = new Date();
+      countDownDate.setDate(countDownDate.getDate() + days);
+
+      var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById(id).innerHTML = d + "d " + h + "h " + m + "m " + s + "s ";
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById(id).innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    }
+
+    startCountdown("countdown-en", 60);
+    startCountdown("countdown-ar", 60);
+  </script>
+</body>
+</html>
